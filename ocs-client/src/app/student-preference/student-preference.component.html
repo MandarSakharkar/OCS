@@ -1,0 +1,53 @@
+<div class="col-md-6">
+  <div class="form">
+    <legend>Add Institute Course Choice</legend>
+    <div class="form-group">
+      <label for="">Course List :</label>
+      <select class="form-control" [(ngModel)]="courseId" (change)="getInstituteByCourseId()">
+        <option *ngFor="let course of courseList" [ngValue]="course.courseId" >{{course.courseName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">Institute List :</label>
+      <select class="form-control" [(ngModel)]="instituteCourse" >
+        <option *ngFor="let instituteCourse of instituteCourseList" [ngValue]="instituteCourse" >{{instituteCourse.institute.instituteName}}</option>
+      </select>
+    </div>
+      <button type="submit" class="btn btn-primary" (click)="addPreference()">Add Choice</button>
+  </div>
+</div>
+<div class="col-md-6">
+  <legend> Your Preferences </legend>
+  <div *ngIf="preferences.length>0" class="table-responsive">
+    <table  class="table table-hover">
+      <thead>
+        <tr>
+          <th>institute</th>
+          <th>course</th>
+          <th>preference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let preference of preferences" >
+          <td>
+            {{preference.instituteCourse.institute.instituteName}}
+          </td>
+          <td>
+            {{preference.instituteCourse.course.courseName}}
+          </td>
+          <td>
+            {{preference.preferenceNumber}}
+          </td>
+          <td>
+            <button type="button" *ngIf="preference.preferenceNumber!=1"  class="btn btn-default" (click)="moveUp(preference.preferenceNumber)">Move Up</button>
+            <button type="button" *ngIf="preference.preferenceNumber!=preferences.length" class="btn btn-default" (click)="moveDown(preference.preferenceNumber)">Move Down</button>
+            
+            <button type="button" class="btn btn-danger" (click)="deletePreference(preference)">Delete</button>
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <button type="button" class="btn btn-success " (click)="save()">Save Preferences</button>  
+  </div>
+</div>

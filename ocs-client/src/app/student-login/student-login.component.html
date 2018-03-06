@@ -1,0 +1,12 @@
+<legend>Student Login</legend>
+        
+<div class="form-group">    
+    <label for="">Form number :</label>               
+    <input type="number" class = "form-control" [(ngModel)]="formNumber"  placeholder="Your Form Number">
+
+    <label for="">Password :</label>
+    <input type="password" class="form-control" [(ngModel)]="password"  placeholder="Your Password">
+</div>
+<a href="#" routerLink='student-account-recovery'>forgot password?</a>
+<button type="submit" class="btn btn-success" (click)='doLogin()'>Login</button>
+<button type="reset" class="btn btn-danger"> Clear </button>

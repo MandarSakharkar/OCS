@@ -1,0 +1,15 @@
+<legend>Student Account Recovery</legend>
+        
+<div class="form-group">    
+    <label for="">Form number :</label>               
+    <input type="number" class = "form-control" [(ngModel)]="formNumber"  placeholder="your form number">
+
+    <strong><p> Or </p></strong>
+
+    <label for="">Email Id :</label>               
+    <input type="email" class = "form-control" [(ngModel)]="emailId"  placeholder="Your email Id">
+    
+    
+</div>
+<button type="submit" class="btn btn-success" (click)='recoverAccount()'>Recover Account</button>
+<button type="reset" class="btn btn-danger"> Clear </button>

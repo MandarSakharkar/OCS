@@ -1,0 +1,35 @@
+<div class="form-inline">
+  <div class="form-group">
+    <label for="">Course List :</label>
+    <select class="form-control" [(ngModel)]="courseId" >
+      <option *ngFor="let course of courseList" value="{{course.courseId}}" >{{course.courseName}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="">Number of seat :</label>
+    <input type="text"class="form-control" [(ngModel)]="numberOfSeat" >
+  </div>
+    <button type="submit" class="btn btn-primary" (click)="addInstituteCourse()">Add Course</button>
+</div>
+
+<br>
+<br>
+<br>
+
+<legend> Course in institute</legend>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>course name</th>
+        <th>number of seats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let instituteCourse of instituteCourseList" >
+       <td> {{instituteCourse.course.courseName}} </td>
+       <td> {{instituteCourse.numberOfSeat}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

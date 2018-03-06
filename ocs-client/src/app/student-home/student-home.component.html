@@ -1,0 +1,19 @@
+<br>
+<br>
+<div class="col-md-10">
+  <div [ngSwitch]="counsellingPhase">
+    <student-detail *ngSwitchCase="'SRV'"></student-detail>
+    <student-preference *ngSwitchCase="'FP'"></student-preference>
+    <student-allocation *ngSwitchCase="'IA'"></student-allocation>
+  </div>
+</div>
+
+<div class="col-md-2">
+    <p class="navbar-text pull-right">
+        Hello {{formNumber}}!
+      </p>
+    <p class="navbar-text pull-right">
+      <a href="#" class="navbar-link" routerLink='student-change-password'>Update Password</a>
+    </p>  
+  </div>
+  

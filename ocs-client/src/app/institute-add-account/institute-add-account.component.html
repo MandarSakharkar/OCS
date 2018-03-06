@@ -1,0 +1,17 @@
+<legend>Institute Add Account</legend>
+        
+<div class="form-group">    
+    <label for="">New Institute Id :</label>               
+    <input type="tel" class = "form-control" [(ngModel)]="instituteId" disabled>
+    
+    <label for="">New Login Id :</label>               
+    <input type="tel" class = "form-control" [(ngModel)]="instituteLoginId"  placeholder="Your new login id">
+
+    <label for="">Password :</label>
+    <input type="password" class="form-control" [(ngModel)]="password"  placeholder="Your Password">
+    
+    <label for="">Confirm Password :</label>
+    <input type="password" class="form-control" [(ngModel)]="cpassword"  placeholder="Your Password">
+</div>
+<button type="submit" class="btn btn-success" (click)='validateAndAddInstituteAccount()'>Login</button>
+<button type="reset" class="btn btn-danger"> Clear </button>

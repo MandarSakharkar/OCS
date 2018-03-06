@@ -1,0 +1,43 @@
+<legend>Institute Allotment</legend>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>
+          Student Name
+        </th>
+        <th>
+          Course Name
+        </th>
+        <th>
+          Institute Name
+        </th>
+        <th>
+          Allotment Id
+        </th>
+        <th>
+          Preference
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          {{instituteAllotment.studentAccount.fullName}}
+        </td>
+        <td>
+          {{instituteAllotment.instituteCourse.course.courseName}}
+        </td>
+        <td>
+          {{instituteAllotment.instituteCourse.institute.instituteName}}
+        </td>
+        <td>
+         {{instituteAllotment.allotmentId}}
+        </td>
+        <td>
+          {{instituteAllotment.preference.preferenceNumber}}
+        </td>              
+      </tr>
+    </tbody>
+  </table>
+</div>

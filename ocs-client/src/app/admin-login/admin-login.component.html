@@ -1,0 +1,11 @@
+<legend>Admin Login</legend>
+        
+<div class="form-group">    
+    <label for="">Admin id :</label>               
+    <input type="tel" class = "form-control" [(ngModel)]="adminId"  placeholder="Your Admin id">
+
+    <label for="">Password :</label>
+    <input type="password" class="form-control" [(ngModel)]="password"  placeholder="Your Password">
+</div>
+<button type="submit" class="btn btn-success" (click)='doLogin()'>Login</button>
+<button type="reset" class="btn btn-danger"> Clear </button>

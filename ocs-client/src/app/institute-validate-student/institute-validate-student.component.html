@@ -1,0 +1,105 @@
+<div class="align-center">
+  
+  <legend>Validate Student</legend>
+  <div class="form-inline">
+    <div class="form-group">
+      <label class="sr-only" for="courseId">Form Number : </label>
+      <input type="email" class="form-control" [(ngModel)]="formNumber" id="formNumber" placeholder="Form Number of Student">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="searchStudent()">Search Student</button>
+  </div>
+
+  <hr>
+  <!-- show details of student if found -->
+  <div *ngIf="isStudentFound">
+    <div class="form-group">
+      <div class="row"> 
+          <div class="col-md-6">
+              <label for="">Date of Birth:</label>
+              <input type="date" [(ngModel)]="dateOfBirth" class="form-control" id="">
+          </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+      <div class="row">
+          <div class="col-md-6">
+              <label for="">Adhar Number :</label>
+              <input type="number" [(ngModel)]="adharNumber" class="form-control" id="" placeholder="Adhar number">
+          </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+          <div class="row">
+              <div class="col-md-6">
+                  <label for="">Gender :</label>
+                  <input type="radio" [(ngModel)]="gender" value="F">Female
+                  <input type="radio" [(ngModel)]="gender" value="M">Male
+              </div>
+
+              <div class="col-md-6">
+                  <label for="">Category : </label>
+                  <select name="category" [(ngModel)]="category" class="form-control" id="">
+                      <option>Open</option>
+                      <option>OBC</option>
+                      <option>NT</option>
+                      <option>VJ</option>
+                      <option>SC</option>
+                      <option>ST</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+      
+    
+      <div class="form-group">
+          <div class="row">
+              <div class="col-md-6">
+                  <label for="">Address:</label>
+                  <input type="text" [(ngModel)]="address"  class = "form-control" name="city" id="" placeholder="Address">
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <div class="row">
+              <div class="col-md-6">
+                  <label for="">Pin-code:</label>
+                  <input type="number" [(ngModel)]="pincode"  class="form-control"id="" placeholder="Pin Code">
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+              <label for="">E-Cat Roll Number:</label>
+              <input type="number" class="form-control" [(ngModel)]="eCatRollNumber"  id="" placeholder="E cat roll number">
+          </div>
+
+          <div class="col-md-6">
+              <label for="">E-Cat Rank: </label>
+              <input type="number" class="form-control" [(ngModel)]="eCatRank" id="" placeholder="E cat rank">
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+              <label for="">Degree:</label>
+              <input type="text" class="form-control" [(ngModel)]="degree"  id="" placeholder="Degree">
+          </div>
+
+          <div class="col-md-6">
+              <label for="">Degree Percentage: </label>
+              <input type="number" class="form-control" [(ngModel)]="degreePercentage"  id="" placeholder="Degree Percentage">
+          </div>
+      </div>
+
+      <div class="form-group pull-right">
+        <input type="submit" class = "btn btn-success" (click)="validateStudent()" value="Validate Student">
+    </div>
+
+  </div>
+
+</div>
+

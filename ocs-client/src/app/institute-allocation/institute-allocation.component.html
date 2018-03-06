@@ -1,0 +1,58 @@
+<div class="col-md-4">
+  
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let instituteCourse of instituteCourseList" (click)="getCourseByInstituteCourse(instituteCourse)">
+      {{instituteCourse.course.courseName}}
+      <span class="badge"></span>      
+    </li>
+  </ul>  
+</div>
+
+<div class="col-md-8">
+<div class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="courseId">Form Number : </label>
+    <input type="email" class="form-control" [(ngModel)]="formNumber" id="formNumber" placeholder="Form Number of Student">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="getAllotmentOfStudent()">Get Student Allotment</button>
+</div>
+
+
+<div *ngIf="instituteAllotment!=undefined" >
+  <ul class="list-group">
+    <li class="list-group-item">Name : {{instituteAllotment.studentAccount.fullName}}</li>
+    <li class="list-group-item">Course Alloted:{{instituteAllotment.instituteCourse.course.courseName}}</li>
+    <li class="list-group-item">Institute Alloted:{{instituteAllotment.instituteCourse.institute.instituteName}}</li>
+  </ul>
+  <button type="button" class="btn btn-primary" (click)="admitStudent()">Admit Student</button>
+</div>
+<br>
+<br>
+<div *ngIf="courseAllotmentList!=undefined">
+  <legend> {{instituteCourse.course.courseId}} Alloted Student List </legend>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Allotment Id</th>
+          <th>Student Name</th>
+          <th>Form Number</th>
+          <th>Admisstion Confirmed?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let courseAllotment of courseAllotmentList" >
+          <td>{{courseAllotment.allotmentId}}</td>
+          <td>{{courseAllotment.studentAccount.fullName}}</td>
+          <td>{{courseAllotment.studentAccount.formNumber}}</td>
+          <td *ngIf="courseAllotment.isAdmissionConfirmed==1">Yes</td>
+          <td *ngIf="courseAllotment.isAdmissionConfirmed==0">No</td>
+          <td></td>    
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
+
+</div>

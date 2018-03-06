@@ -1,0 +1,48 @@
+<div class="align-center">
+  
+  <legend>Add Course</legend>
+  <div class="form-inline">
+    <div class="form-group">
+      <label class="sr-only" for="courseId">Course Id : </label>
+      <input type="email" class="form-control" [(ngModel)]="courseId" id="courseId" placeholder="Course Id">
+    </div>
+
+    <div class="form-group">
+      <label class="sr-only" for="">Course Name : </label>
+      <input type="email" class="form-control" [(ngModel)]="courseName"  placeholder="Course Name">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addCourse()">Add Course</button>
+  </div>
+</div>
+
+<br>
+  
+<div class="align-center">
+  <legend>Counselling Process Phase</legend>
+  <div class="form-inline">
+    <div class="form-group">
+      <label>Phase: </label>
+      <select class="form-control" [(ngModel)]="phase">
+        <option value="IR">Institute Registration</option>
+        <option value="SRV">Student Registration and Validation</option>
+        <option value="FP">Filling Preference</option>
+        <option value="IA">Institute Allocation And Admission</option>
+      </select>
+      <div class="form-group">
+        <label>Round: </label>
+        <select class="form-control" [(ngModel)]="round">
+          <option value="1">Round 1</option>
+          <option value="2">Round 2</option>
+        </select>
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="changePhase()">Change Phase</button>
+  </div>
+  <br>
+  <br>
+  <div>
+    <legend>Institute Allocation</legend>
+    <button type="button" class="btn btn-primary" (click) = "startInstituteAllocation()">Start institute Allocation for round {{round}}</button>
+  </div>
+</div>
+
+

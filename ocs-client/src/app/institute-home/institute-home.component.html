@@ -1,0 +1,5 @@
+<div [ngSwitch]="counsellingPhase">
+  <institute-add-course *ngSwitchCase="'IR'"></institute-add-course>
+  <institute-validate-student *ngSwitchCase="'SRV'"></institute-validate-student>
+  <institute-allocation *ngSwitchCase="'IA'"></institute-allocation>
+</div>

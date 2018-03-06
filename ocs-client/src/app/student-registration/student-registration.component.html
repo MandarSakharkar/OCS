@@ -1,0 +1,36 @@
+<legend>Student Registration</legend>
+        
+            <div class="form-group">
+                <label for="">Name :</label>
+                <input type="text" class="form-control" [(ngModel)]="fullName" (blur)="validateName()" placeholder="Your Name" required >
+                
+                <div class="alert alert-danger" *ngIf="nameError" >
+                    Name is Empty or Invalid
+                </div>
+                
+
+                <label for="">Email :</label>                
+                <input type="email" class = "form-control" [(ngModel)]="emailId" (blur)="validateEmail()"  placeholder="Your Email" required>
+                <div class="alert alert-danger" *ngIf="emailError" >
+                    Email is Empty or Invalid
+                </div>
+
+                <label for="">Contact number :</label>               
+                <input type="tel" class = "form-control" [(ngModel)]="contactNumber" (blur)="validateContact()"  placeholder="Your Contact number" required>
+                <div class="alert alert-danger" *ngIf="contactError" >
+                    Contact number is Empty or Invalid(must be 10 digit mobile number)
+                </div>
+
+                <label for="">Password :</label>
+                <input type="password" class="form-control" [(ngModel)]="password" (blur)="validatePassword()" placeholder="choose password" required>
+                <div class="alert alert-danger" *ngIf="passwordError" >
+                    Password is short,empty or two password are not matching
+                </div>
+
+                <label for="">Confirm Password :</label>
+                <input type="password" class="form-control" [(ngModel)]="confirmPassword" placeholder="confirm password" required>      
+            </div>
+        
+            <button type="submit" class="btn btn-success" (click)='validateAndSubmit()' >Submit</button>
+            
+            <button type="reset" class="btn btn-danger"> Clear </button>
