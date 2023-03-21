@@ -6,3 +6,9 @@ Demo Project for Online Counselling System
 
 * Angular 4
 * TypeScript
+
+## Tech Stack - BackEnd
+* Java
+* Spring MVC
+* hibernate
+* maven
